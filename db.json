@@ -1,0 +1,29 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "image": "https://res.cloudinary.com/appmasters-io/image/upload/v1676307834/Untitled_6_8cf5cf1ca8.png",
+      "title": "Evento de Tecnologia",
+      "description": "Um evento sobre inovações tecnológicas.",
+      "status": "ativo",
+      "publishedAt": "2025-02-10T14:00:00"
+    },
+    {
+      "id": 2,
+      "image": "https://cdn.prod.website-files.com/6615907cf43a722162c27a58/6737b4c2b7bf0920968f20c5_AD_4nXel6SDo998b45c2WzBDK1O0SzHCrmCsLg3aK9Iz87_cYi7O4Kfs4tBZMkx7zDAdAzt6serXkkeSh21CiYM5nZchPHfsbtYTgjRnASJ7lxVnIVMliFozWQDrsJQGKhGSIJRErKv52g.jpeg",
+      "title": "Evento de Marketing",
+      "description": "Um evento sobre estratégias de marketing.",
+      "status": "ativo",
+      "publishedAt": "2025-02-10T14:00:00"
+    },
+    {
+      "id": 3,
+      "image": "https://chiefofdesign.com.br/wp-content/uploads/2017/11/DESIGN-PARA-EVENTOS-CURSO.png",
+      "title": "Evento de Design",
+      "description": "Um evento sobre design.",
+      "status": "ativo",
+      "publishedAt": "2025-02-10T14:00:00"
+    }
+
+  ]
+}

@@ -1,0 +1,26 @@
+<div class="flex flex-col md:flex-row  md:items-center justify-between">
+  <div>
+    <h1 class="text-2xl font-medium text-neutral-900">Eventos</h1>
+  </div>
+  <div class="mt-4 md:mt-0 flex items-center">
+    <p-iconfield [style]="{height: '3rem'}">
+      <p-inputicon styleClass="pi pi-search " />
+      <input type="text" pInputText placeholder="Pesquise por nome..." />
+    </p-iconfield>
+
+    <div class="rounded-md border border-neutral-100/5 bg-neutral-900/5 p-1 ml-2">
+      <p-button icon="pi pi-microsoft" class="btn-visualization" severity="secondary" [style]="{height: '3rem'}"
+        [class.active]="visualizationMode === 'grid'" (onClick)="setVisualizationMode('grid')"
+
+        />
+
+
+      <p-button icon="pi pi-list" severity="secondary" class="btn-visualization ml-2" [style]="{height: '3rem'}"
+        [class.active]="visualizationMode === 'list'" (onClick)="setVisualizationMode('list')" />
+
+
+    </div>
+  </div>
+
+
+</div>
