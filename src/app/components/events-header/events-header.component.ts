@@ -3,7 +3,7 @@ import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
-
+import { TooltipModule } from 'primeng/tooltip';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
     InputTextModule,
     FormsModule,
     ButtonModule,
+    TooltipModule,
   ],
   templateUrl: './events-header.component.html',
   styleUrl: './events-header.component.scss',

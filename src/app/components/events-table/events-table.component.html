@@ -1,11 +1,12 @@
-<p-table [value]="events" dataKey="id" [rows]="10" [rowsPerPageOptions]="[1,10, 25, 50]" [paginator]="true"
-  [globalFilterFields]="['name', 'country.name', 'representative.name', 'status']">
+<p-table [value]="events" dataKey="id" [rows]="10" [rowsPerPageOptions]="[1,10, 25, 50]" [paginator]="events.length > 0"
+  [globalFilterFields]="['title', 'description', 'publishedAt', 'status']">
 
   <ng-template #header>
     <tr>
       <th>Titulo</th>
       <th>Descrição</th>
       <th>Publicado em</th>
+      <th>Status</th>
       <th>Ações</th>
 
     </tr>
@@ -21,16 +22,28 @@
         </div>
       </td>
       <td>
-        <p>{{event.description}}</p>
+        <p>{{utilsService.truncateText(event?.description, 50)}}</p>
       </td>
       <td>
         <p>{{utilsService.formatDate(event?.publishedAt)}}</p>
       </td>
       <td>
+        <p-badge [value]="event.status" [severity]="event.status === 'ativo' ? 'success' : 'warn'" class="capitalize" />
+
+      </td>
+      <td>
         <div class="flex items-center">
-          <p-button icon="pi pi-pencil" severity="secondary" size="small" />
-          <p-button icon="pi pi-trash" severity="danger" class="ml-2" size="small" />
+          <p-button icon="pi pi-pencil" severity="secondary" size="small" pTooltip="Editar" tooltipPosition="top" />
+          <p-button icon="pi pi-trash" severity="danger" class="ml-2" size="small" pTooltip="Deletar"
+            tooltipPosition="top" />
         </div>
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template #emptymessage>
+    <tr>
+      <td colspan="5">
+        <p class="text-center">Nenhum evento foi encontrado...</p>
       </td>
     </tr>
   </ng-template>

@@ -4,7 +4,7 @@ import { EventCardComponent } from '../event-card/event-card.component';
 
 @Component({
   selector: 'app-events-grid',
-  imports: [NgClass, EventCardComponent],
+  imports: [EventCardComponent],
   templateUrl: './events-grid.component.html',
   styleUrl: './events-grid.component.scss',
 })

@@ -1,8 +1,14 @@
-<div class="grid grid-cols-1 md:grid-cols-2  gap-4 pt-5"
-  [ngClass]="events.length >= 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'">
+@if(events.length){
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 "
+  [class]="events.length >= 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'">
   @for (item of events; track item) {
-
   <app-event-card [event]="item" />
   }
 
 </div>
+}
+@else {
+<div class="flex justify-center items-center mt-16">
+  <p class="text-2xl">Nenhum evento foi encontrado...</p>
+</div>
+}

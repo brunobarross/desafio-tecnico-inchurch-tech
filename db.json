@@ -5,7 +5,7 @@
       "image": "https://res.cloudinary.com/appmasters-io/image/upload/v1676307834/Untitled_6_8cf5cf1ca8.png",
       "title": "Evento de Tecnologia",
       "description": "Um evento sobre inovações tecnológicas.",
-      "status": "ativo",
+      "status": "inativo",
       "publishedAt": "2025-02-10T14:00:00"
     },
     {
@@ -24,6 +24,5 @@
       "status": "ativo",
       "publishedAt": "2025-02-10T14:00:00"
     }
-
   ]
 }

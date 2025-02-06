@@ -1,9 +1,7 @@
-
-  .btn-visualization {
+::ng-deep .btn-visualization {
+  &.active {
     .p-button {
-      .p-button.active {
-        @apply bg-lime-500;
-      }
+      @apply bg-lime-500 text-white;
     }
   }
-
+}
