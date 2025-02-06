@@ -14,4 +14,6 @@ import { Tooltip } from 'primeng/tooltip';
 export class EventsTableComponent {
   constructor(public utilsService: UtilsService) {}
   @Input() events: Evento[] = [];
+  @Input() emptyMessage?: string
+
 }

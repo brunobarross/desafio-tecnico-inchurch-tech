@@ -13,9 +13,10 @@ import { EventsTableComponent } from '../../components/events-table/events-table
 })
 export class EventsComponent {
   constructor(private eventService: EventService) {}
-
-  events: Evento[] = [];
   @Input() visualizationMode: string = 'grid';
+  events: Evento[] = [];
+  emptyMessage: string = "Não há eventos cadastrados";
+
 
   getEvents(): void {
     this.eventService.getEvents().subscribe((events) => (this.events = events));
