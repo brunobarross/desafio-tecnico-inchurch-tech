@@ -1,7 +1,9 @@
 ::ng-deep .btn-visualization {
   &.active {
     .p-button {
-      @apply bg-lime-500 text-white;
+      background-color: rgba(132,204,22, 1) !important;
+      color: #fff !important;
     }
   }
 }
+
