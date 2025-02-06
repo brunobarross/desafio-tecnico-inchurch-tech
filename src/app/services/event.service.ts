@@ -4,7 +4,6 @@ import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
-
 })
 export class EventService {
   constructor(private http: HttpClient) {}

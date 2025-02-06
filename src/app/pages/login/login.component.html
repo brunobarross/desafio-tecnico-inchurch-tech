@@ -5,17 +5,20 @@
     <div class="w-full h-full flex flex-col items-center justify-center">
       <div class="xl:shadow-sm xl:w-[27.5rem]  p-6">
         <h3 class="text-[2rem] font-normal"> Fazer login </h3>
-        <p class="text-base text-neutral-900/70 mt-2">Seja bem-vindo(a)! Insira seu e-mail e
+        <p class="text-base text-neutral-900/70 mt-2">Seja bem-vindo(a)! Insira seu usuário e
           senha para entrar em sua conta.</p>
-        <form class="mt-6">
+        <form [formGroup]="formLogin" (submit)="makeLogin()" class="mt-6">
           <div class="flex flex-col gap-1">
-            <input pInputText placeholder="Email" aria-label="email" />
+            <input pInputText placeholder="Usuário" type="text" aria-label="usuario" formControlName="username"
+              name="username" required />
           </div>
           <div class="flex flex-col gap-1 mt-6">
-            <input pInputText placeholder="Senha" aria-label="senha" />
+            <input pInputText placeholder="Senha" aria-label="senha" type="password" formControlName="password"
+              name="password" required />
           </div>
           <div class="flex flex-col gap-1 mt-8">
-            <button pButton type="submit">Entrar</button>
+            <p-toast></p-toast>
+            <button pButton [loading]="isLoading()">Entrar</button>
           </div>
         </form>
       </div>
