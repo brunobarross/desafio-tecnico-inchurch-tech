@@ -3,7 +3,7 @@
     <h1 class="text-2xl font-medium text-neutral-900">Eventos</h1>
   </div>
   <div class="mt-4 md:mt-0 flex flex-col md:flex-row md:items-center">
-    <p-iconfield >
+    <p-iconfield>
       <p-inputicon styleClass="pi pi-search " />
       <input type="text" pInputText placeholder="Pesquise por nome..." class="w-full md:w-[320px]" />
     </p-iconfield>
@@ -11,12 +11,12 @@
     <div class="rounded-md p-1 ml-auto md:ml-2  w-max mt-4 md:mt-0">
       <p-button icon="pi pi-microsoft" class="btn-visualization" severity="secondary" [style]="{height: '3rem'}"
         pTooltip="Visualização em grades" tooltipPosition="top" [class.active]="visualizationMode === 'grid'"
-        (onClick)="setVisualizationMode('grid')" />
+        (click)="setVisualizationMode('grid')" />
 
 
       <p-button icon="pi pi-list" severity="secondary" class="btn-visualization ml-2" [style]="{height: '3rem'}"
         pTooltip="Visualização em lista" tooltipPosition="top" [class.active]="visualizationMode === 'list'"
-        (onClick)="setVisualizationMode('list')" />
+        (click)="setVisualizationMode('list')" />
 
 
     </div>
