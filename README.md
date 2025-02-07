@@ -35,8 +35,8 @@ Antes de rodar o projeto, verifique se você tem as seguintes ferramentas instal
 5. **Autenticacão**
 Para se autenticar use os seguintes dados:
 ```
- *Usuário**: emilys
- **Senha**: emilyspass
+ Usuário*: emilys
+ Senha: emilyspass
 ```
 
 7. **Teste de Responsividade**
