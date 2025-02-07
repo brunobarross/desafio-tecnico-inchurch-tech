@@ -43,6 +43,6 @@ export class EventsTableComponent {
   }
 
   navigateToEvent(eventId: number) {
-    this.router.navigate(['event', eventId]);
+    this.router.navigate(['events', eventId]);
   }
 }
