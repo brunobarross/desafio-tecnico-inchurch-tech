@@ -17,6 +17,11 @@ export const routes: Routes = [
     component: LayoutBaseComponent,
     children: [
       {
+        path: '',
+        redirectTo: 'events',
+        pathMatch: 'full',
+      },
+      {
         path: 'events',
         title: 'Eventos',
         component: EventsComponent,
@@ -24,9 +29,11 @@ export const routes: Routes = [
       },
     ],
   },
+
   {
-    path: '*',
+    path: '**',
     redirectTo: 'login',
     pathMatch: 'full',
+
   },
 ];
