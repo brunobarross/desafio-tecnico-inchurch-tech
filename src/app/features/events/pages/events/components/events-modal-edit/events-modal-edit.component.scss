@@ -1,0 +1,5 @@
+::ng-deep .modal-edit-event {
+  .p-dialog {
+    @apply w-full md:w-[440px];
+  }
+}

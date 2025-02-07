@@ -1,15 +1,35 @@
-<p-dialog header="Editar evento" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
+<p-dialog header="Editar evento" [modal]="true" [(visible)]="visible" class="modal-edit-event" >
   <span class="p-text-secondary block mb-8">Atualize os dados do evento.</span>
-  <div class="flex items-center gap-4 mb-4">
-    <label for="title" class="font-semibold w-24">Título</label>
-    <input pInputText id="title" class="flex-auto" autocomplete="off" />
-  </div>
-  <div class="flex items-center gap-4 mb-8">
-    <label for="description" class="font-semibold w-24">Descrição</label>
-    <input pInputText id="description" class="flex-auto" autocomplete="off" />
-  </div>
-  <div class="flex justify-end gap-2">
-    <p-button label="Cancelar" severity="secondary" />
-    <p-button label="Salvar" />
-  </div>
+  <form [formGroup]="formEditEvent" class="mt-6">
+    <div class="flex flex-col gap-4 mb-4">
+      <label for="title" class="font-semibold">Título</label>
+      <input pInputText id="title" class="flex-auto" autocomplete="off" />
+    </div>
+    <div class="flex flex-col gap-4 mb-4 w-full">
+      <label for="title" class="font-semibold ">Data do evento</label>
+      <input pInputText id="date_event" type="date" class="flex-auto" autocomplete="off" />
+    </div>
+    <div class="flex flex-col gap-4 mb-4">
+      <label for="description" class="font-semibold">Descrição</label>
+      <textarea rows="5" cols="30" pTextarea formControlName="description"></textarea>
+    </div>
+    <div class="flex flex-col  ">
+      <label for="status" class="font-semibold">Status</label>
+      <div class="flex items-center mt-4">
+        <div >
+          <p-radiobutton inputId="ativo" value="ativo" formControlName="status" />
+          <label for="ativo" class="ml-1">ativo</label>
+        </div>
+        <div class="ml-2">
+          <p-radiobutton inputId="ativo" value="inativo" formControlName="status" />
+          <label for="inativo" class="ml-1">inativo</label>
+        </div>
+      </div>
+
+    </div>
+    <div class="flex justify-end gap-2 mt-8">
+      <p-button label="Cancelar" severity="secondary" />
+      <p-button label="Salvar" />
+    </div>
+  </form>
 </p-dialog>
