@@ -1,7 +1,5 @@
 @if(event){
-<p-card [style]="{ borderRadius: '.75rem', overflow: 'hidden' }"
-
->
+<p-card [style]="{ borderRadius: '.75rem', overflow: 'hidden', height: '100%' }">
   <ng-template #header>
     <div class="h-[12.5rem] overlay">
       <app-badge class="absolute top-4 right-4 z-10 ">
@@ -16,19 +14,21 @@
     <div class="flex flex-col">
       <h3 class="text-base text-neutral-900 font-medium">{{event.title}}</h3>
       <p class="text-sm mt-1 two-lines">{{event.description}}</p>
-      <div>
-        <div class="flex items-center justify-between mt-auto pt-5">
-          <div>
-            <h3 class="font-medium text-sm text-lime-500 ">Publicado em</h3>
-            <p class="text-xs mt-auto pt-1">{{formattedDate()}}</p>
-          </div>
-          <div class="flex items-center">
-            <p-button icon="pi pi-pencil" severity="secondary" size="small" pTooltip="Editar" tooltipPosition="top" (click)="handleClickEdit(event.id)" />
-            <p-button icon="pi pi-trash" severity="danger" class="ml-2" size="small" pTooltip="Deletar" tooltipPosition="top" (click)="handleClickDelete(event.id)"/>
-          </div>
 
-
+      <div class="flex items-center justify-between mt-auto pt-5">
+        <div>
+          <h3 class="font-medium text-sm text-lime-500 ">Publicado em</h3>
+          <p class="text-xs mt-auto pt-1">{{formattedDate()}}</p>
         </div>
+        <div class="flex items-center mt-auto">
+          <p-button icon="pi pi-pencil" severity="secondary" size="small" pTooltip="Editar" tooltipPosition="top"
+            (click)="handleClickEdit(event.id)" />
+          <p-button icon="pi pi-trash" severity="danger" class="ml-2" size="small" pTooltip="Deletar"
+            tooltipPosition="top" (click)="handleClickDelete(event.id)" />
+        </div>
+
+
+
       </div>
 
     </div>

@@ -6,17 +6,17 @@
       "title": "Evento de Tecnologia",
       "description": "Um evento sobre inovações teascnológicas.",
       "status": "ativo",
-      "publishedAt": "2025-02-10T00:00:00",
-      "date": "2025-02-10"
+      "publishedAt": "2025-02-24T00:00:00",
+      "date": "2025-02-24"
     },
     {
       "id": "2",
       "image": "https://cdn.prod.website-files.com/6615907cf43a722162c27a58/6737b4c2b7bf0920968f20c5_AD_4nXel6SDo998b45c2WzBDK1O0SzHCrmCsLg3aK9Iz87_cYi7O4Kfs4tBZMkx7zDAdAzt6serXkkeSh21CiYM5nZchPHfsbtYTgjRnASJ7lxVnIVMliFozWQDrsJQGKhGSIJRErKv52g.jpeg",
       "title": "Evento de Marketing",
-      "description": "adsadasds",
+      "description": "adsadasdsasas",
       "status": "ativo",
-      "publishedAt": "2025-02-28T00:00:00",
-      "date": "2025-02-28"
+      "publishedAt": "2025-02-18T00:00:00",
+      "date": "2025-02-18"
     },
     {
       "id": "3",
