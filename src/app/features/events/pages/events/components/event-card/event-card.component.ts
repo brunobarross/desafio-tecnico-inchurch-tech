@@ -34,10 +34,10 @@ export class EventCardComponent {
   @Output() editEvent = new EventEmitter<number>();
   formattedDate = computed(() => formatDate(this.event?.publishedAt));
 
-  handleClickDelete(event: Event) {
-    this.deleteEvent.emit(this.event?.id);
+  handleClickDelete(eventId: number) {
+    this.deleteEvent.emit(eventId);
   }
-  handleClickEdit(event: Event) {
-    this.editEvent.emit(this.event?.id);
+  handleClickEdit(eventId: number) {
+    this.editEvent.emit(eventId);
   }
 }

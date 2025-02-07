@@ -35,8 +35,11 @@ export class EventsComponent {
   eventsService = inject(EventsService);
   @Input() visualizationMode: WritableSignal<string> = signal('grid');
   @Input() deleteEvent: WritableSignal<number> = signal<number>(0);
+  @Input() editEvent: WritableSignal<number> = signal<number>(0);
   events = this.eventsService.events;
   emptyMessage: string = 'Não há eventos cadastrados';
+  modalEditEventIsVisible = signal<boolean>(false);
+  selectedEventId = signal<number>(0);
 
   getEvents(): void {
     this.eventsService.getEvents();
@@ -69,7 +72,8 @@ export class EventsComponent {
   }
 
   viewEditEvent(eventId: number) {
-    this.eventsService.editEvent(eventId);
+    this.selectedEventId.set(eventId);
+    this.modalEditEventIsVisible.set(true);
   }
 
   ngOnInit(): void {

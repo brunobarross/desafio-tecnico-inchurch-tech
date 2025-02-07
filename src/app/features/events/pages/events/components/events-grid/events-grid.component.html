@@ -1,7 +1,7 @@
 @if(events().length){
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 " [class]="events.length >= 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'">
   @for (item of events(); track item) {
-  <app-event-card (deleteEvent)="viewDeleteEvent($event)" [event]="item" />
+  <app-event-card (deleteEvent)="viewDeleteEvent($event)" (editEvent)="viewEditEvent($event)" [event]="item" />
   }
 
 </div>

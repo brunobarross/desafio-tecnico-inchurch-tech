@@ -23,8 +23,8 @@
             <p class="text-xs mt-auto pt-1">{{formattedDate()}}</p>
           </div>
           <div class="flex items-center">
-            <p-button icon="pi pi-pencil" severity="secondary" size="small" pTooltip="Editar" tooltipPosition="top" />
-            <p-button icon="pi pi-trash" severity="danger" class="ml-2" size="small" pTooltip="Deletar" tooltipPosition="top" (click)="handleClickDelete($event)"/>
+            <p-button icon="pi pi-pencil" severity="secondary" size="small" pTooltip="Editar" tooltipPosition="top" (click)="handleClickEdit(event.id)" />
+            <p-button icon="pi pi-trash" severity="danger" class="ml-2" size="small" pTooltip="Deletar" tooltipPosition="top" (click)="handleClickDelete(event.id)"/>
           </div>
 
 

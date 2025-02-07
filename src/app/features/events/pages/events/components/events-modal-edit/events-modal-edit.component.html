@@ -1,13 +1,15 @@
-<p-dialog header="Editar evento" [modal]="true" [(visible)]="visible" class="modal-edit-event" >
+<p-dialog header="Editar evento" [modal]="true" [(visible)]="visible" class="modal-edit-event" (onShow)="fillForm()"
+  (onHide)="resetForm()">
+
   <span class="p-text-secondary block mb-8">Atualize os dados do evento.</span>
   <form [formGroup]="formEditEvent" class="mt-6">
     <div class="flex flex-col gap-4 mb-4">
       <label for="title" class="font-semibold">Título</label>
-      <input pInputText id="title" class="flex-auto" autocomplete="off" />
+      <input pInputText id="title" formControlName="title" class="flex-auto" autocomplete="off" />
     </div>
     <div class="flex flex-col gap-4 mb-4 w-full">
       <label for="title" class="font-semibold ">Data do evento</label>
-      <input pInputText id="date_event" type="date" class="flex-auto" autocomplete="off" />
+      <input pInputText id="date_event" type="date" class="flex-auto" autocomplete="off" formControlName="date" />
     </div>
     <div class="flex flex-col gap-4 mb-4">
       <label for="description" class="font-semibold">Descrição</label>
@@ -16,7 +18,7 @@
     <div class="flex flex-col  ">
       <label for="status" class="font-semibold">Status</label>
       <div class="flex items-center mt-4">
-        <div >
+        <div>
           <p-radiobutton inputId="ativo" value="ativo" formControlName="status" />
           <label for="ativo" class="ml-1">ativo</label>
         </div>
@@ -25,11 +27,10 @@
           <label for="inativo" class="ml-1">inativo</label>
         </div>
       </div>
-
     </div>
     <div class="flex justify-end gap-2 mt-8">
-      <p-button label="Cancelar" severity="secondary" />
-      <p-button label="Salvar" />
+      <p-button label="Cancelar" severity="secondary" (click)="handleClickClose()" />
+      <p-button label="Salvar" severity="primary" (click)="updateEvent()" />
     </div>
   </form>
 </p-dialog>
