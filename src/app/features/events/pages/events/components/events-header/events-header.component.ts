@@ -4,7 +4,7 @@ import { InputIconModule } from 'primeng/inputicon';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { TooltipModule } from 'primeng/tooltip';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-events-header',
@@ -22,11 +22,19 @@ import { FormsModule } from '@angular/forms';
 })
 export class EventsHeaderComponent {
   @Output() visualizationModeChange = new EventEmitter<string>();
+  @Output() search = new EventEmitter<string>();
   visualizationMode: string = 'grid';
+  searchControl = new FormControl('');
   value?: string;
+  searchValue?: string;
 
   setVisualizationMode(mode: string): void {
     this.visualizationMode = mode;
     this.visualizationModeChange.emit(mode);
+  }
+
+  handleSearch(search: string): void {
+    this.search.emit(search);
+    
   }
 }

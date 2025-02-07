@@ -1,6 +1,7 @@
 import {
   Component,
   computed,
+  effect,
   inject,
   Input,
   signal,
@@ -31,16 +32,21 @@ import { EventsModalEditComponent } from './components/events-modal-edit/events-
   providers: [ConfirmationService],
 })
 export class EventsComponent {
-  constructor(private confirmationService: ConfirmationService) {}
+  constructor(private confirmationService: ConfirmationService) {
+    effect(() => {
+      this.eventsFiltered.set(this.events());
+    });
+  }
   eventsService = inject(EventsService);
   @Input() visualizationMode: WritableSignal<string> = signal('grid');
   @Input() deleteEvent: WritableSignal<number> = signal<number>(0);
   @Input() editEvent: WritableSignal<number> = signal<number>(0);
+  @Input() search: string = '';
   events = this.eventsService.events;
   emptyMessage: string = 'Não há eventos cadastrados';
   modalEditEventIsVisible = signal<boolean>(false);
   selectedEventId = signal<number>(0);
-
+  eventsFiltered: WritableSignal<Evento[]> = signal<Evento[]>([]);
   getEvents(): void {
     this.eventsService.getEvents();
   }
@@ -75,8 +81,19 @@ export class EventsComponent {
     this.selectedEventId.set(eventId);
     this.modalEditEventIsVisible.set(true);
   }
+  filterEventsBySearch(search: string): void {
+    if (search === '') {
+      return this.eventsFiltered.set(this.events());
+    }
+    this.eventsFiltered.update((events) => {
+      return events.filter((event) => {
+        return event.title.toLowerCase().includes(search.toLowerCase());
+      });
+    });
+  }
 
   ngOnInit(): void {
     this.getEvents();
+    this.eventsFiltered.set(this.events());
   }
 }

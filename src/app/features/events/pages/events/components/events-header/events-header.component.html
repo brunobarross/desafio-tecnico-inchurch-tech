@@ -5,7 +5,11 @@
   <div class="mt-4 md:mt-0 flex flex-col md:flex-row md:items-center">
     <p-iconfield>
       <p-inputicon styleClass="pi pi-search " />
-      <input type="text" pInputText placeholder="Pesquise por nome..." class="w-full md:w-[320px]" />
+
+      <input type="text" pInputText placeholder="Pesquise por nome..." class="w-full md:w-[320px]"
+        [(ngModel)]="searchValue"
+        (ngModelChange)="handleSearch($event)"
+        />
     </p-iconfield>
 
     <div class="rounded-md p-1 ml-auto md:ml-2  w-max mt-4 md:mt-0">

@@ -1,12 +1,13 @@
 <main>
   <div class="container mx-auto mt-8 mb-8 px-4 lg:px-6">
-    <app-events-header (visualizationModeChange)="onVisualizationModeChange($event)" />
+    <app-events-header (visualizationModeChange)="onVisualizationModeChange($event)"
+    (search)="filterEventsBySearch($event)" />
     @if(visualizationMode() === 'grid') {
-    <app-events-grid (deleteEvent)="viewDeleteEvent($event)" (editEvent)="viewEditEvent($event)" [events]="events"
+    <app-events-grid (deleteEvent)="viewDeleteEvent($event)" (editEvent)="viewEditEvent($event)" [events]="eventsFiltered"
       [emptyMessage]="emptyMessage" />
     }
     @else{
-    <app-events-table (deleteEvent)="viewDeleteEvent($event)" [events]="events" (editEvent)="viewEditEvent($event)"
+    <app-events-table (deleteEvent)="viewDeleteEvent($event)" [events]="eventsFiltered" (editEvent)="viewEditEvent($event)"
       [emptyMessage]="emptyMessage" />
     }
   </div>
