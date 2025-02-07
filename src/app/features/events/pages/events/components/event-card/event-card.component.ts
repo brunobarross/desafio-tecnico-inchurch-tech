@@ -1,7 +1,9 @@
 import {
   Component,
   computed,
+  EventEmitter,
   Input,
+  Output,
   signal,
   WritableSignal,
 } from '@angular/core';
@@ -32,6 +34,7 @@ import { EventsService } from '../../../../events.service';
 export class EventCardComponent {
   @Input() event?: Evento;
   formattedDate = computed(() => formatDate(this.event?.publishedAt));
+  @Output() deleteEvent = new EventEmitter<number>();
 
   constructor(
     private confirmationService: ConfirmationService,
@@ -56,8 +59,7 @@ export class EventCardComponent {
       accept: () => {
         if (this.event?.id) {
           this.eventsService.deleteEvent(this.event.id).subscribe(() => {
-            //emitir evento de sucesso para o componente pai
-            
+            this.deleteEvent.emit(this.event?.id);
           });
         }
       },

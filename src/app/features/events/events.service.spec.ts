@@ -1,13 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 
-import { EventService } from './events.service';
+import { EventsService } from './events.service';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 describe('EventService', () => {
-  let service: EventService;
+  let service: EventsService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(EventService);
+    TestBed.configureTestingModule({
+      providers: [ provideHttpClient(withFetch()),]
+    });
+    service = TestBed.inject(EventsService);
   });
 
   it('should be created', () => {

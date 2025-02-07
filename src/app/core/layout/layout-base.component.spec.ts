@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LayoutBaseComponent } from './layout-base.component';
+import { provideHttpClient, withFetch } from '@angular/common/http';
+import { AuthService } from '../auth/services/auth.service';
+import { MessageService } from 'primeng/api';
 
 describe('LayoutBaseComponent', () => {
   let component: LayoutBaseComponent;
@@ -8,7 +11,12 @@ describe('LayoutBaseComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LayoutBaseComponent]
+      imports: [LayoutBaseComponent],
+      providers: [
+        AuthService,
+        provideHttpClient(withFetch()),
+        MessageService,
+      ],
     })
     .compileComponents();
 

@@ -11,6 +11,5 @@ import { EventCardComponent } from '../event-card/event-card.component';
 export class EventsGridComponent {
   @Input() events = signal<Evento[]>([]);
   @Input() emptyMessage?: string;
-  //emitir evento de click
-  @Output() eventClick = new EventEmitter<Evento>();
+
 }

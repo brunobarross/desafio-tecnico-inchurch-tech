@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EventCardComponent } from './event-card.component';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 describe('EventCardComponent', () => {
   let component: EventCardComponent;
@@ -8,10 +9,13 @@ describe('EventCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [EventCardComponent]
+      imports: [EventCardComponent],
+      providers:[
+         provideHttpClient(withFetch()),
+      ]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(EventCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
