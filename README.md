@@ -35,7 +35,7 @@ Antes de rodar o projeto, verifique se você tem as seguintes ferramentas instal
 5. **Autenticacão**
 Para se autenticar use os seguintes dados:
 ```
- Usuário*: emilys
+ Usuário: emilys
  Senha: emilyspass
 ```
 
