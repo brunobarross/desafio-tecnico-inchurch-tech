@@ -58,7 +58,6 @@ export class EventsComponent {
         severity: 'danger',
       },
       accept: () => {
-        console.log(eventId)
         if (eventId) {
           this.eventsService.deleteEvent(eventId);
         }

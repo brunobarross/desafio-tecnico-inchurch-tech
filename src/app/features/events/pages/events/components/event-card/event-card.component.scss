@@ -11,4 +11,10 @@
   }
 }
 
-
+::ng-deep .p-card {
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    transform: translateY(-5px);
+  }
+}

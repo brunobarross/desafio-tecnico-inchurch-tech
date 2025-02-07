@@ -1,6 +1,6 @@
 <p-table [value]="events()" dataKey="id" [rows]="10" [rowsPerPageOptions]="[1,10, 25, 50]"
   [paginator]="events.length > 0" [globalFilterFields]="['title', 'description', 'publishedAt', 'status']"
-  [responsive]="true" responsiveLayout="stack">
+  [responsive]="true" responsiveLayout="stack" [rowHover]="true">
 
   <ng-template #header>
     <tr>
