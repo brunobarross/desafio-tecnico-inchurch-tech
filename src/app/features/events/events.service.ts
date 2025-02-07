@@ -7,9 +7,9 @@ import { Observable, of } from 'rxjs';
 })
 export class EventsService {
   constructor(private http: HttpClient) {}
-  private events_url = 'http://localhost:3000/events';
+  private apiUrl = 'http://localhost:3000';
 
   getEvents(): Observable<Evento[]> {
-    return this.http.get<Evento[]>(this.events_url);
+    return this.http.get<Evento[]>(`${this.apiUrl}/events`);
   }
 }
