@@ -11,7 +11,7 @@ Antes de rodar o projeto, verifique se você tem as seguintes ferramentas instal
 1. **Clone do Repositório**
  Clone este repositório para iniciar o desenvolvimento:
  ```bash
- git clone <[link-do-repositório](https://github.com/brunobarross/desafio-tecnico-inchurch-tech.git)>
+ git clone https://github.com/brunobarross/desafio-tecnico-inchurch-tech.git
  cd desafio-tecnico-inchurch-tech
  ```
 2. **Instalação de Dependências**
@@ -31,5 +31,11 @@ Antes de rodar o projeto, verifique se você tem as seguintes ferramentas instal
  ng serve
  ```
  Acesse a aplicação em `http://localhost:4200`.
-5. **Teste de Responsividade**
+
+5. **Autenticacão**
+Para se autenticar use os seguintes dados:
+ *Usuário**: emilys
+ **Senha**: emilyspass
+
+6. **Teste de Responsividade**
  Verifique o comportamento responsivo da aplicação em dispositivos móveis.
