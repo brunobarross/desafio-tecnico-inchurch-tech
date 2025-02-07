@@ -1,5 +1,12 @@
 import { NgClass } from '@angular/common';
-import { Component, EventEmitter, Input, Output, signal, WritableSignal } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  signal,
+  WritableSignal,
+} from '@angular/core';
 import { EventCardComponent } from '../event-card/event-card.component';
 
 @Component({
@@ -11,5 +18,11 @@ import { EventCardComponent } from '../event-card/event-card.component';
 export class EventsGridComponent {
   @Input() events = signal<Evento[]>([]);
   @Input() emptyMessage?: string;
+  @Output() deleteEvent = new EventEmitter<number>();
 
+
+
+  viewDeleteEvent(eventId: number) {
+    this.deleteEvent.emit(eventId);
+  }
 }

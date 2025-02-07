@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EventsComponent } from './events.component';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { MessageService } from 'primeng/api';
 
 describe('EventsComponent', () => {
   let component: EventsComponent;
@@ -12,6 +13,7 @@ describe('EventsComponent', () => {
       imports: [EventsComponent],
       providers:[
          provideHttpClient(withFetch()),
+         MessageService
       ]
     })
     .compileComponents();

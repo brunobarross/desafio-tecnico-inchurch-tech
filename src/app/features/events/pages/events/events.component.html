@@ -2,12 +2,13 @@
   <div class="container mx-auto pt-8 mb-8 px-4 lg:px-6">
     <app-events-header (visualizationModeChange)="onVisualizationModeChange($event)" />
     @if(visualizationMode() === 'grid') {
-    <app-events-grid [events]="events" [emptyMessage]="emptyMessage" />
+    <app-events-grid (deleteEvent)="viewDeleteEvent($event)" [events]="events" [emptyMessage]="emptyMessage" />
     }
     @else{
-    <app-events-table [events]="events" [emptyMessage]="emptyMessage" />
+    <app-events-table (deleteEvent)="viewDeleteEvent($event)" [events]="events" [emptyMessage]="emptyMessage" />
     }
   </div>
-
+  <p-toast />
+  <p-confirmdialog />
 
 </main>

@@ -1,16 +1,13 @@
 <header class="border-b border-neutral-900/10 py-4 ">
   <div class="container mx-auto  px-4 lg:px-6 ">
     <div class="flex items-center justify-between">
-      <h1 class="font-semibold text-2xl xl:text-3xl">Inchurch Events</h1>
+      <img src="/inchurch-logo.svg" alt="Inchurch Logo" class="w-36" />
       @if(isAuthenticated()){
       <div class="flex items-center">
         <p class="hidden md:block md:text-sm">Bem vindo(a), {{user()?.firstName}}!</p>
         <p-button severity="secondary" (click)="makeLogout()" class="ml-4">Sair</p-button>
       </div>
-
       }
-
-
     </div>
   </div>
 </header>

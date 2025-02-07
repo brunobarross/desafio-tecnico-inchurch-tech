@@ -1,10 +1,18 @@
-import { Component, computed, Input, signal, WritableSignal } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  signal,
+  WritableSignal,
+} from '@angular/core';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { BadgeModule } from 'primeng/badge';
 import { Tooltip } from 'primeng/tooltip';
 import truncateText from '../../../../../../shared/utils/string,util';
 import formatDate from '../../../../../../shared/utils/date.util';
+import { Evento } from '../../../../events.model';
 
 @Component({
   selector: 'app-events-table',
@@ -15,6 +23,7 @@ import formatDate from '../../../../../../shared/utils/date.util';
 export class EventsTableComponent {
   @Input() events: WritableSignal<Evento[]> = signal<Evento[]>([]);
   @Input() emptyMessage?: string;
+  @Output() deleteEvent = new EventEmitter<number>();
 
   truncateText(text: string, limit: number): string {
     return truncateText(text, limit);
@@ -23,5 +32,7 @@ export class EventsTableComponent {
     return formatDate(event.publishedAt);
   }
 
-
+  handleClickDelete(eventId: number) {
+    this.deleteEvent.emit(eventId);
+  }
 }

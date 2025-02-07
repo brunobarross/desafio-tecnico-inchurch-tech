@@ -19,7 +19,7 @@ export class AuthService {
 
   constructor(
     private http: HttpClient,
-    private messageServvice: MessageService,
+    private messageService: MessageService,
     private router: Router
   ) {}
 
@@ -42,7 +42,7 @@ export class AuthService {
           this.router.navigate(['/events']);
         },
         error: ({ error }) => {
-          this.messageServvice.add({
+          this.messageService.add({
             severity: 'error',
             summary: 'Erro',
             detail: error.message,
@@ -66,11 +66,13 @@ export class AuthService {
         this.currentUser.set(response);
       },
       error: ({ error }) => {
-        this.messageServvice.add({
+        this.messageService.add({
           severity: 'error',
           summary: 'Erro',
           detail: error.message,
         });
+        this.logout();
+        this.router.navigate(['/login']);
       },
     });
   }
