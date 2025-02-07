@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HeaderComponent } from './header.component';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
+import { provideRouter } from '@angular/router';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -13,7 +14,9 @@ describe('HeaderComponent', () => {
       imports: [HeaderComponent],
       providers: [
          provideHttpClient(withFetch()),
+         provideRouter([]),
          MessageService,
+
       ]
     })
     .compileComponents();

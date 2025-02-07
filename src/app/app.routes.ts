@@ -9,6 +9,7 @@ import { EventSingleComponent } from './features/events/pages/event-single/event
 export const routes: Routes = [
   {
     path: 'login',
+    title: 'InChurch | Login',
     component: LoginComponent,
     canActivate: [blockLoginGuardGuard],
   },
@@ -23,13 +24,13 @@ export const routes: Routes = [
       },
       {
         path: 'events',
-        title: 'Eventos',
+        title: 'InChurch | Eventos',
         component: EventsComponent,
         canActivate: [authGuard],
       },
       {
         path: 'events/:id',
-        title: 'Evento',
+        title: 'InChurch | Eventos',
         component: EventSingleComponent,
         canActivate: [authGuard],
       },
