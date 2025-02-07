@@ -35,7 +35,6 @@ export class LoginComponent {
   formLogin!: FormGroup;
 
   makeLogin(): void {
-    console.log(this.formLogin.get('username')?.errors);
     this.authService.login(
       this.formLogin.value.username,
       this.formLogin.value.password
