@@ -13,16 +13,19 @@ import { EventsService } from '../../events.service';
 import { ConfirmationService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
+import { EventsModalEditComponent } from './components/events-modal-edit/events-modal-edit.component';
 @Component({
   selector: 'app-events',
   standalone: true,
   imports: [
     EventsHeaderComponent,
+    EventsModalEditComponent,
     EventsGridComponent,
     EventsTableComponent,
     ConfirmDialogModule,
     ToastModule,
   ],
+
   templateUrl: './events.component.html',
   styleUrl: './events.component.scss',
   providers: [ConfirmationService],
@@ -63,6 +66,10 @@ export class EventsComponent {
         }
       },
     });
+  }
+
+  viewEditEvent(eventId: number) {
+    this.eventsService.editEvent(eventId);
   }
 
   ngOnInit(): void {

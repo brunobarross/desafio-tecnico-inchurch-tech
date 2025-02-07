@@ -31,10 +31,13 @@ import formatDate from '../../../../../../shared/utils/date.util';
 export class EventCardComponent {
   @Input() event?: Evento;
   @Output() deleteEvent = new EventEmitter<number>();
+  @Output() editEvent = new EventEmitter<number>();
   formattedDate = computed(() => formatDate(this.event?.publishedAt));
 
   handleClickDelete(event: Event) {
     this.deleteEvent.emit(this.event?.id);
-
+  }
+  handleClickEdit(event: Event) {
+    this.editEvent.emit(this.event?.id);
   }
 }

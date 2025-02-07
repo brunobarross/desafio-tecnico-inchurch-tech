@@ -57,4 +57,7 @@ export class EventsService {
       },
     });
   }
+  editEvent(id: number) {
+    console.log('Editando evento', id);
+  }
 }

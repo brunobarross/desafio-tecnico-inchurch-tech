@@ -24,6 +24,7 @@ export class EventsTableComponent {
   @Input() events: WritableSignal<Evento[]> = signal<Evento[]>([]);
   @Input() emptyMessage?: string;
   @Output() deleteEvent = new EventEmitter<number>();
+  @Output() editEvent = new EventEmitter<number>();
 
   truncateText(text: string, limit: number): string {
     return truncateText(text, limit);
@@ -34,5 +35,8 @@ export class EventsTableComponent {
 
   handleClickDelete(eventId: number) {
     this.deleteEvent.emit(eventId);
+  }
+  handleClickEdit(eventId: number) {
+    this.editEvent.emit(eventId);
   }
 }
