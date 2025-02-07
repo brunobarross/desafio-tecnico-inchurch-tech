@@ -9,16 +9,23 @@
           senha para entrar em sua conta.</p>
         <form [formGroup]="formLogin" (submit)="makeLogin()" class="mt-6">
           <div class="flex flex-col gap-1">
-            <input pInputText placeholder="Usuário" type="text" aria-label="usuario" formControlName="username"
-              name="username" required />
+            <input id="username" pInputText placeholder="Usuário" type="text" aria-label="usuario"
+              formControlName="username" name="username" />
           </div>
+
           <div class="flex flex-col gap-1 mt-6">
-            <input pInputText placeholder="Senha" aria-label="senha" type="password" formControlName="password"
-              name="password" required />
+            <p-password id="password" formControlName="password" placeholder="Senha" aria-label="senha"
+              [toggleMask]="true" formControlName="password" name="password" [feedback]="false" autocomplete="off" />
+
+
           </div>
+
           <div class="flex flex-col gap-1 mt-8">
             <p-toast></p-toast>
-            <button pButton [loading]="isLoading()">Entrar</button>
+
+            <p-button type="submit" label="Entrar" class="w-full" severity="primary" styleClass="w-full"
+            [disabled]="!formLogin.valid"
+            />
           </div>
         </form>
       </div>

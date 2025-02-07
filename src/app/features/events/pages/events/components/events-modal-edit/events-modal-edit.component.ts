@@ -2,11 +2,9 @@ import {
   Component,
   inject,
   Input,
-  Output,
   signal,
   computed,
-  effect,
-  EventEmitter,
+
 } from '@angular/core';
 import { Dialog } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
@@ -46,6 +44,7 @@ export class EventsModalEditComponent {
   event = this.eventsService.event;
   isLoading = computed(() => this.eventsService.isLoading());
 
+
   async fillForm() {
     this.eventsService.getEvent(this.selectedEventId).subscribe({
       next: (event) => {
@@ -65,6 +64,8 @@ export class EventsModalEditComponent {
         ...this.formEditEvent.value,
         publishedAt: `${this.formEditEvent.value.date}T00:00:00`,
       });
+    } else{
+      this.formEditEvent.markAllAsTouched();
     }
   }
 

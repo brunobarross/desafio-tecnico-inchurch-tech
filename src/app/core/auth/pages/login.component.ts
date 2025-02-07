@@ -1,8 +1,9 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
+import { PasswordModule } from 'primeng/password';
 
 import {
   FormControl,
@@ -14,25 +15,30 @@ import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule, InputTextModule, ButtonModule, ToastModule],
+  imports: [
+    ReactiveFormsModule,
+    InputTextModule,
+    ButtonModule,
+    ToastModule,
+    PasswordModule,
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
   standalone: true,
   providers: [AuthService],
 })
 export class LoginComponent {
-  constructor(
-    private authService: AuthService,
-    private formBuilder: FormBuilder
-  ) {}
+  authService = inject(AuthService);
+  formBuilder = inject(FormBuilder);
 
   isLoading = computed(() => this.authService.isLoading());
   formLogin!: FormGroup;
 
   makeLogin(): void {
+    console.log(this.formLogin.get('username')?.errors);
     this.authService.login(
-      this.formLogin.value.username ?? '',
-      this.formLogin.value.password ?? ''
+      this.formLogin.value.username,
+      this.formLogin.value.password
     );
   }
 

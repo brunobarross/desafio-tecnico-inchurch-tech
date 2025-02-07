@@ -5,25 +5,21 @@
   <form [formGroup]="formEditEvent" class="mt-6">
     <div class="flex flex-col gap-4 mb-4">
       <label for="title" class="font-semibold">Título</label>
-      <input pInputText id="title" formControlName="title" class="flex-auto" autocomplete="off" />
-    </div>
-    <div class="flex flex-col gap-4 mb-4 w-full">
-      <label for="title" class="font-semibold ">Data do evento</label>
-      <input pInputText id="date_event" type="date" class="flex-auto" autocomplete="off" formControlName="date" />
+      <input pInputText id="title" formControlName="title" class="flex-auto" autocomplete="off" aria-label="title" />
     </div>
     <div class="flex flex-col gap-4 mb-4">
       <label for="description" class="font-semibold">Descrição</label>
-      <textarea rows="5" cols="30" pTextarea formControlName="description"></textarea>
+      <textarea rows="5" cols="30" pTextarea formControlName="description" aria-label="description"></textarea>
     </div>
-    <div class="flex flex-col  ">
+    <div class="flex flex-col">
       <label for="status" class="font-semibold">Status</label>
       <div class="flex items-center mt-4">
         <div>
-          <p-radiobutton inputId="ativo" value="ativo" formControlName="status" />
+          <p-radiobutton inputId="ativo" value="ativo" formControlName="status" aria-label="ativo" />
           <label for="ativo" class="ml-1">ativo</label>
         </div>
         <div class="ml-2">
-          <p-radiobutton inputId="ativo" value="inativo" formControlName="status" />
+          <p-radiobutton inputId="ativo" value="inativo" formControlName="status" aria-label="inativo" />
           <label for="inativo" class="ml-1">inativo</label>
         </div>
       </div>
