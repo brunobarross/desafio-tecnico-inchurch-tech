@@ -1,5 +1,5 @@
 @if(event){
-<p-card [style]="{ borderRadius: '.75rem', overflow: 'hidden', height: '100%' }">
+<p-card [style]="{ borderRadius: '.75rem', overflow: 'hidden', height: '100%' }"  (click)="navigateToEvent(event.id)">
   <ng-template #header>
     <div class="h-[12.5rem] overlay">
       <app-badge class="absolute top-4 right-4 z-10 ">

@@ -13,6 +13,7 @@ import { Tooltip } from 'primeng/tooltip';
 import truncateText from '../../../../../../shared/utils/string,util';
 import formatDate from '../../../../../../shared/utils/date.util';
 import { Evento } from '../../../../events.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-events-table',
@@ -21,6 +22,7 @@ import { Evento } from '../../../../events.model';
   styleUrl: './events-table.component.scss',
 })
 export class EventsTableComponent {
+  constructor(private router: Router) {}
   @Input() events: WritableSignal<Evento[]> = signal<Evento[]>([]);
   @Input() emptyMessage?: string;
   @Output() deleteEvent = new EventEmitter<number>();
@@ -38,5 +40,9 @@ export class EventsTableComponent {
   }
   handleClickEdit(eventId: number) {
     this.editEvent.emit(eventId);
+  }
+
+  navigateToEvent(eventId: number) {
+    this.router.navigate(['event', eventId]);
   }
 }

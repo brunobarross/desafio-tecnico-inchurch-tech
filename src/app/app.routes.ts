@@ -4,7 +4,7 @@ import { LoginComponent } from './core/auth/pages/login.component';
 import { LayoutBaseComponent } from './core/layout/layout-base.component';
 import { EventsComponent } from './features/events/pages/events/events.component';
 import { authGuard } from './core/auth/guards/auth.guard';
-
+import { EventSingleComponent } from './features/events/pages/event-single/event-single.component';
 
 export const routes: Routes = [
   {
@@ -27,6 +27,12 @@ export const routes: Routes = [
         component: EventsComponent,
         canActivate: [authGuard],
       },
+      {
+        path: 'event/:id',
+        title: 'Evento',
+        component: EventSingleComponent,
+        canActivate: [authGuard],
+      },
     ],
   },
 
@@ -34,6 +40,5 @@ export const routes: Routes = [
     path: '**',
     redirectTo: 'login',
     pathMatch: 'full',
-
   },
 ];
