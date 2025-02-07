@@ -34,8 +34,10 @@ Antes de rodar o projeto, verifique se você tem as seguintes ferramentas instal
 
 5. **Autenticacão**
 Para se autenticar use os seguintes dados:
+```
  *Usuário**: emilys
  **Senha**: emilyspass
+```
 
-6. **Teste de Responsividade**
+7. **Teste de Responsividade**
  Verifique o comportamento responsivo da aplicação em dispositivos móveis.
