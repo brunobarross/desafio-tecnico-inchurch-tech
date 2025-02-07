@@ -1,12 +1,12 @@
 import { Component, computed, signal } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../auth/services/auth.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [ButtonModule],
+  imports: [ButtonModule, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })

@@ -28,7 +28,7 @@ export const routes: Routes = [
         canActivate: [authGuard],
       },
       {
-        path: 'event/:id',
+        path: 'events/:id',
         title: 'Evento',
         component: EventSingleComponent,
         canActivate: [authGuard],

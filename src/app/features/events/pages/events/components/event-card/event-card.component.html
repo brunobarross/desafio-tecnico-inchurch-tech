@@ -1,5 +1,5 @@
 @if(event){
-<p-card [style]="{ borderRadius: '.75rem', overflow: 'hidden', height: '100%' }"  (click)="navigateToEvent(event.id)">
+<p-card [style]="{ borderRadius: '.75rem', overflow: 'hidden', height: '100%' }" (click)="navigateToEvent(event.id)">
   <ng-template #header>
     <div class="h-[12.5rem] overlay">
       <app-badge class="absolute top-4 right-4 z-10 ">
@@ -26,9 +26,6 @@
           <p-button icon="pi pi-trash" severity="danger" class="ml-2" size="small" pTooltip="Deletar"
             tooltipPosition="top" (click)="handleClickDelete(event.id)" />
         </div>
-
-
-
       </div>
 
     </div>
