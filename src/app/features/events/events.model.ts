@@ -1,4 +1,4 @@
-interface Evento {
+export interface Evento {
   id: number;
   image?: string;
   title: string;
@@ -6,5 +6,3 @@ interface Evento {
   status: string;
   publishedAt: string;
 }
-
-

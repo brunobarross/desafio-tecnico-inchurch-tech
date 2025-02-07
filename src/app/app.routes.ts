@@ -1,9 +1,10 @@
 import { Routes } from '@angular/router';
-import { EventsComponent } from './pages/events/events.component';
-import { LoginComponent } from './pages/login/login.component';
-import { authGuard } from './guards/auth.guard';
-import { blockLoginGuardGuard } from './guards/block-login-guard.guard';
-import { LayoutBaseComponent } from './layouts/layout-base/layout-base.component';
+import { blockLoginGuardGuard } from './core/auth/guards/block-login-guard.guard';
+import { LoginComponent } from './core/auth/pages/login.component';
+import { LayoutBaseComponent } from './core/layout/layout-base.component';
+import { EventsComponent } from './features/events/pages/events/events.component';
+import { authGuard } from './core/auth/guards/auth.guard';
+
 
 export const routes: Routes = [
   {

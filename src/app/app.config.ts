@@ -7,7 +7,8 @@ import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/lara';
 import { definePreset } from '@primeng/themes';
 import { MessageService } from 'primeng/api';
-import { authInterceptor } from './interceptors/auth.interceptor';
+import { authInterceptor } from './core/interceptors/auth.interceptor';
+
 
 const MyPreset = definePreset(Aura, {
   semantic: {
